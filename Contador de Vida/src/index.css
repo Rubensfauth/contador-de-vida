@@ -1,0 +1,344 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Container principal da aplicação */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%);
+  padding: 2rem;
+}
+
+/* Container da lista de tarefas */
+.lista-container {
+  max-width: 28rem;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Título */
+.titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Container do input e botão */
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Campo de entrada */
+.input-tarefa {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.input-tarefa:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input-tarefa::placeholder {
+  color: #9ca3af;
+}
+
+/* Botão adicionar */
+.botao-adicionar {
+  padding: 0.75rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.botao-adicionar:hover {
+  background-color: #2563eb;
+}
+
+.botao-adicionar:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Lista de tarefas */
+.lista-tarefas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Item da lista */
+.item-tarefa {
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  border-left: 4px solid #60a5fa;
+  transition: background-color 0.2s;
+}
+
+.item-tarefa:hover {
+  background-color: #f3f4f6;
+}
+
+/* Mensagem quando lista está vazia */
+.mensagem-vazia {
+  color: #6b7280;
+  text-align: center;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Contador de tarefas */
+.contador {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .lista-container {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  .titulo {
+    font-size: 1.25rem;
+  }
+}
+
+/* Menu de navegação */
+.menu-navegacao {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.app-titulo {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.botoes-menu {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.botao-menu {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  color: #6b7280;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.botao-menu:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.botao-menu.ativo {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.conteudo-principal {
+  flex: 1;
+}
+
+/* Contador de vida */
+.contador-wrapper {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.controles-contador {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.botao-controle {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1rem;
+}
+
+.botao-controle.montar {
+  background: #10b981;
+  color: white;
+}
+
+.botao-controle.montar:hover {
+  background: #059669;
+}
+
+.botao-controle.desmontar {
+  background: #ef4444;
+  color: white;
+}
+
+.botao-controle.desmontar:hover {
+  background: #dc2626;
+}
+
+.status-contador {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.contador-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contador-titulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+.contador-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tempo-principal {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  font-family: "Courier New", monospace;
+  margin-bottom: 0.5rem;
+}
+
+.tempo-secundario {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.status-info {
+  background: #f0fdf4;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #22c55e;
+}
+
+.status-texto {
+  font-size: 1rem;
+  color: #15803d;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.dica-texto {
+  font-size: 0.875rem;
+  color: #16a34a;
+}
+
+.placeholder-contador {
+  background: #f9fafb;
+  padding: 3rem 2rem;
+  border-radius: 0.5rem;
+  border: 2px dashed #d1d5db;
+  text-align: center;
+  color: #6b7280;
+}
+
+.placeholder-contador p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .menu-navegacao {
+    padding: 1rem;
+  }
+
+  .app-titulo {
+    font-size: 1.5rem;
+  }
+
+  .botoes-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao-menu {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .tempo-principal {
+    font-size: 2rem;
+  }
+
+  .contador-container {
+    padding: 1.5rem;
+  }
+}
